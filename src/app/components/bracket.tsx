@@ -31,7 +31,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                         <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                             {/* Match 7 */}
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                     {(() => {
                                         const match = finals.find(match => match.number === 7);
                                         if (match && match.organization1) {
@@ -47,17 +47,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                         return (
                                             <>
                                                 {match.score1.length >= 1 && (
-                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                    <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                         {match.score1[0] ?? 0}
                                                     </div>
                                                 )}
                                                 {match.score1.length >= 2 && (
-                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                    <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                         {match.score1[1] ?? 0}
                                                     </div>
                                                 )}
                                                 {match.score1.length >= 3 && (
-                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                    <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                         {match.score1[2] ?? 0}
                                                     </div>
                                                 )}
@@ -70,7 +70,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                 })()}
                             </div>
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                     {(() => {
                                         const match = finals.find(match => match.number === 7);
                                         if (match && match.organization2) {
@@ -86,17 +86,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                         return (
                                             <>
                                                 {match.score2.length >= 1 && (
-                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                    <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                         {match.score2[0] ?? 0}
                                                     </div>
                                                 )}
                                                 {match.score2.length >= 2 && (
-                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                    <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                         {match.score2[1] ?? 0}
                                                     </div>
                                                 )}
                                                 {match.score2.length >= 3 && (
-                                                    <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                    <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                         {match.score2[2] ?? 0}
                                                     </div>
                                                 )}
@@ -120,7 +120,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                     {/* Match 5 */}
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                        <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                             {(() => {
                                                                 const match = semifinals.find(match => match.number === 5);
                                                                 if (match && match.organization1) {
@@ -136,17 +136,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                 return (
                                                                     <>
                                                                         {match.score1.length >= 1 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score1[0] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score1.length >= 2 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score1[1] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score1.length >= 3 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score1[2] ?? 0}
                                                                             </div>
                                                                         )}
@@ -159,7 +159,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                         })()}
                                                     </div>
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                        <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                             {(() => {
                                                                 const match = semifinals.find(match => match.number === 5);
                                                                 if (match && match.organization2) {
@@ -175,17 +175,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                 return (
                                                                     <>
                                                                         {match.score2.length >= 1 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score2[0] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score2.length >= 2 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score2[1] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score2.length >= 3 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score2[2] ?? 0}
                                                                             </div>
                                                                         )}
@@ -204,7 +204,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 1 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 1);
                                                                     if (match && match.organization1) {
@@ -220,17 +220,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score1.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -243,7 +243,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 1);
                                                                     if (match && match.organization2) {
@@ -259,17 +259,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score2.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -287,7 +287,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 2 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 2);
                                                                     if (match && match.organization1) {
@@ -303,17 +303,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score1.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -326,7 +326,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 2);
                                                                     if (match && match.organization2) {
@@ -342,17 +342,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score2.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -381,7 +381,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                     {/* Match 6 */}
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                        <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                             {(() => {
                                                                 const match = semifinals.find(match => match.number === 6);
                                                                 if (match && match.organization1) {
@@ -397,17 +397,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                 return (
                                                                     <>
                                                                         {match.score1.length >= 1 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score1[0] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score1.length >= 2 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score1[1] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score1.length >= 3 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score1[2] ?? 0}
                                                                             </div>
                                                                         )}
@@ -420,7 +420,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                         })()}
                                                     </div>
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                        <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                        <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                             {(() => {
                                                                 const match = semifinals.find(match => match.number === 6);
                                                                 if (match && match.organization2) {
@@ -436,17 +436,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                 return (
                                                                     <>
                                                                         {match.score2.length >= 1 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score2[0] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score2.length >= 2 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score2[1] ?? 0}
                                                                             </div>
                                                                         )}
                                                                         {match.score2.length >= 3 && (
-                                                                            <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                            <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                 {match.score2[2] ?? 0}
                                                                             </div>
                                                                         )}
@@ -465,7 +465,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 3 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 3);
                                                                     if (match && match.organization1) {
@@ -481,17 +481,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score1.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -504,7 +504,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 3);
                                                                     if (match && match.organization2) {
@@ -520,17 +520,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score2.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -548,7 +548,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 4 */}
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 4);
                                                                     if (match && match.organization1) {
@@ -564,17 +564,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score1.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score1.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score1[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -587,7 +587,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             })()}
                                                         </div>
                                                         <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
-                                                            <div className=" w-full h-full border-b-2 border-templateDarkBlue flex items-center">
+                                                            <div className="w-full h-full border-b-2 border-[#175933] flex items-center pl-2 sm:pl-4">
                                                                 {(() => {
                                                                     const match = quarterfinals.find(match => match.number === 4);
                                                                     if (match && match.organization2) {
@@ -603,17 +603,17 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                                     return (
                                                                         <>
                                                                             {match.score2.length >= 1 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[0] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 2 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[1] ?? 0}
                                                                                 </div>
                                                                             )}
                                                                             {match.score2.length >= 3 && (
-                                                                                <div className="text-center border-l-2 border-b-2 border-templateDarkBlue h-full w-[60px] p-1 sm:p-2">
+                                                                                <div className="text-center border-l-2 border-b-2 border-[#175933] h-full w-[60px] p-1 sm:p-2">
                                                                                     {match.score2[2] ?? 0}
                                                                                 </div>
                                                                             )}
@@ -641,3 +641,4 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
 }
 
 export default Bracket;
+

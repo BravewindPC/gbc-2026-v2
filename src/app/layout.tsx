@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./components/navbar";
 import { Footer } from "./components/footer";
@@ -8,7 +7,7 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 
 const balmy = localFont({
-  src: "./fonts/Balmy-Beta.ttf",
+  src: "./fonts/ZenDots-Regular.ttf",
   display:"swap",
   variable:"--font-balmy",
 })
@@ -57,7 +56,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={cn(montserrat.variable, balmy.variable)}>
-      <body>
+      <body className="font-balmy">
         <Head>
           <link rel="icon" href="/favicon.ico" />
         </Head>

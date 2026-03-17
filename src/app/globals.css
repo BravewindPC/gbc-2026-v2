@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .bg-colorr{
-  background-color: #96B2DB;
+  background-color: #eaed88;
   z-index: -50;
 }
 
@@ -55,25 +55,25 @@
 
 .text-shadow {
   text-shadow:
-    1px 1px 2px rgba(0, 0, 0, 0.7), 
-    -1px -1px 2px rgba(0, 0, 0, 0.7), 
-    1px -1px 2px rgba(0, 0, 0, 0.7), 
-    -1px 1px 2px rgba(0, 0, 0, 0.7);
+    1px 1px 2px #08413b, 
+    -1px -1px 2px #08413b, 
+    1px -1px 2px #08413b, 
+    -1px 1px 2px #08413b;
 }
 
 .thick-shadow {
   text-shadow:
-    2px 2px 4px rgba(0, 0, 0, 0.7), 
-    -2px -2px 4px rgba(0, 0, 0, 0.7), 
-    2px -2px 4px rgba(0, 0, 0, 0.7), 
-    -2px 2px 4px rgba(0, 0, 0, 0.7);
+    2px 2px 4px #08413b, 
+    -2px -2px 4px #08413b, 
+    2px -2px 4px #08413b, 
+    -2px 2px 4px #08413b;
 }
 
 .bg-gradient-custom {
   background-image: linear-gradient(
     to bottom, 
     #011d4d, /* Dark blue at the top */
-    #11318a, /* Transition starts to baby blue around 70% of the element's height */
+    #3a6eff, /* Transition starts to baby blue around 70% of the element's height */
     #C5E4FC 90% /* Ends with an even lighter blue at the bottom */
   );
 }
@@ -93,8 +93,8 @@
   background-image: linear-gradient(
     to bottom, 
     #FFF0BA, /* Start with dark blue at the top */
-    #6495ED, /* Transition to baby blue starts around 70% of the element's height */
-    #04070a /* And fills up to the bottom */
+    #91b329, /* Transition to baby blue starts around 70% of the element's height */
+    #135f33 /* And fills up to the bottom */
   );
   opacity: 0.87; /* Adjust the opacity of the background */
   filter: blur(1px); /* Blur only the background */
@@ -111,14 +111,14 @@
 
 .shadow-outline {
   text-shadow: 
-    -2.5px -2.5px 2px #001840,  2.5px -2.5px 2px #001840,
-    -2.5px  2.5px 2px #001840,  2.5px  2.5px 2px #001840,
-    0    -2.5px 0 #001840,  0    2.5px 0 #001840,
-    -2.5px  0   0 #001840,  2.5px  0   0 #001840,
-    -1px -2.5px 0 #001840,  1px -2.5px 0 #001840,
-    -2.5px -1px 0 #001840,  2.5px -1px 0 #001840,
-    -2.5px  1px 0 #001840,  2.5px  1px 0 #001840,
-    -1px  2.5px 0 #001840,  1px  2.5px 0 #001840;
+    -2.5px -2.5px 2px #3a5615,  2.5px -2.5px 2px #3a5615,
+    -2.5px  2.5px 2px #3a5615,  2.5px  2.5px 2px #3a5615,
+    0    -2.5px 0 #3a5615,  0    2.5px 0 #3a5615,
+    -2.5px  0   0 #3a5615,  2.5px  0   0 #3a5615,
+    -1px -2.5px 0 #3a5615,  1px -2.5px 0 #3a5615,
+    -2.5px -1px 0 #3a5615,  2.5px -1px 0 #3a5615,
+    -2.5px  1px 0 #3a5615,  2.5px  1px 0 #3a5615,
+    -1px  2.5px 0 #3a5615,  1px  2.5px 0 #3a5615;
 }
 
 .shadow-outline-reverse {
@@ -190,4 +190,8 @@
 
 .custom-toast-container {
   width: 100%
+}
+
+.font-balmy {
+  font-size: 0.8em;
 }
