@@ -75,24 +75,40 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
         fetchDataGroup().catch(console.error);
     }, [selectedOption, selectedDate]);
 
+    function normalizeMatch(match) {
+        return {
+            ...match,
+            players1: match.players1 ?? "TBD",
+            players2: match.players2 ?? "TBD",
+            organization1: match.organization1 ?? "",
+            organization2: match.organization2 ?? "",
+            score1: match.score1 ?? [],
+            score2: match.score2 ?? [],
+            dateStart: match.dateStart ?? null,
+            dateEnd: match.dateEnd ?? null,
+            court: match.court ?? "-",
+            round: match.round ?? "-"
+        }
+    }
     return (
         <div className=" px-5 py-8 sm:px-10 sm:py-14 w-[98%] max-w-[1000px] mx-auto font-balmy text-templatePaleYellow">
-            <div className=" text-lg custom:text-2xl md:text-5xl shadow-outline">
-                Match Shedule 20 april - 5 May 2024
+            <div className=" text-lg custom:text-2xl md:text-5xl shadow-outline tracking-wide">
+                Match Shedule 25 April - 10 May 2026
             </div>
             <button
-                className="p-2 sm:p-5 mt-5 w-[130px] custom:w-[180px] md:w-[300px] ml-[1%] text-xs custom:text-xl md:text-3xl bg-templateDarkBlue hover:bg-templatePaleYellow hover:text-templateDarkBlue focus:bg-templatePaleYellow focus:text-templateDarkBlue transition duration-500"
+                className="p-2 sm:p-5 mt-5 w-[130px] custom:w-[180px] md:w-[300px] ml-[1%] text-xs custom:text-xl md:text-3xl bg-primary hover:bg-templatePaleYellow hover:text-templateDarkBlue focus:bg-templatePaleYellow focus:text-templateDarkBlue transition duration-500"
                 onClick={() => setIsOpen(!isOpen)}
             >
-                {selectedOption}
+                <span>{selectedOption}</span>
+                <span className="ml-2 text-sm">▼</span>
             </button>
             {isOpen && (
-                <div className=" ml-[3%] absolute mt-1 bg-white w-[70%] rounded-md shadow-lg z-10">
+                <div className=" ml-[3%] absolute mt-2 bg-white w-[200px] rounded-xl shadow-xl z-10 border">
                     <ul className="py-1 text-gray-700">
                         {options.map((option) => (
                         <li
                             key={option}
-                            className="px-4 py-2 hover:bg-gray-200 cursor-pointer transition duration-300"
+                            className="px-4 py-2 hover:bg-gray-200 cursor-pointer transition rounded-md "
                             onClick={() => {
                             setSelectedOption(option);
                             setIsOpen(false);
@@ -105,54 +121,66 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                 </div>
             )}
             <div className=" mt-10 bg-templateDarkBlue w-full">
-                <div className=" flex justify-evenly w-full bg-templateDarkBlue cursor-pointer">
+                <div className=" flex justify-evenly w-full bg-primary cursor-pointer">
                     <div 
-                        onClick={() => setSelectedDate(new Date(2024, 4, 20))}
+                        onClick={() => setSelectedDate(new Date(2026, 4, 25))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
-                            formatDate(selectedDate) === formatDate(new Date(2024, 4, 20))
+                            formatDate(selectedDate) === formatDate(new Date(2026, 4, 25))
                             ? 'bg-templatePaleYellow text-templateDarkBlue'
                             : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
                         }`}
                     >
-                        20 Apr
+                        25 Apr
                     </div>
                     <div 
-                        onClick={() => setSelectedDate(new Date(2024, 4, 21))}
+                        onClick={() => setSelectedDate(new Date(2026, 4, 26))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
-                            formatDate(selectedDate) === formatDate(new Date(2024, 4, 21))
+                            formatDate(selectedDate) === formatDate(new Date(2026, 4, 26))
                             ? 'bg-templatePaleYellow text-templateDarkBlue'
                             : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
                         }`}
                     >
-                        21 Apr
+                        26 Apr
                     </div>
                     <div 
-                        onClick={() => setSelectedDate(new Date(2024, 5, 4))}
+                        onClick={() => setSelectedDate(new Date(2026, 5, 2))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
-                            formatDate(selectedDate) === formatDate(new Date(2024, 5, 4))
+                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 2))
                             ? 'bg-templatePaleYellow text-templateDarkBlue'
                             : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
                         }`}
                     >
-                        4 May
+                        2 May
                     </div>
                     <div 
-                        onClick={() => setSelectedDate(new Date(2024, 5, 5))}
+                        onClick={() => setSelectedDate(new Date(2026, 5, 9))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
-                            formatDate(selectedDate) === formatDate(new Date(2024, 5, 5))
+                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 9))
                             ? 'bg-templatePaleYellow text-templateDarkBlue'
                             : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
                         }`}
                     >
-                        5 May
+                        9 May
+                    </div>
+                    <div 
+                        onClick={() => setSelectedDate(new Date(2026, 5, 10))}
+                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
+                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 10))
+                            ? 'bg-templatePaleYellow text-templateDarkBlue'
+                            : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
+                        }`}
+                    >
+                        10 May
                     </div>
                 </div>
                 {
-                    dataSchedule.map((match, index) => (
+                    dataSchedule.map((rawMatch, index) => {
+                        const match = normalizeMatch(rawMatch);
+                        return (
                         <div 
                             key={index}
                             onClick={() => handleScheduleClick(match)} 
-                            className={` text-[7px] custom:text-[10px] sm:text-lg h-20 custom:h-32 sm:h-40 cursor-pointer font-monserrat font-bold ${
+                            className={`text-[7px] custom:text-[10px] sm:text-lg h-20 custom:h-32 sm:h-40 cursor-pointer font-monserrat font-bold ${
                                 index % 2 === 0
                                 ? 'bg-templateDarkBlue text-templatePaleYellow'
                                 : 'bg-templatePaleYellow text-templateDarkBlue'
@@ -194,11 +222,11 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                 <div className="flex flex-col flex-grow justify-center items-center w-[42%]">
                                     {/* {match.players1.split('/').map((player, playerIndex, playerArray) => ( */}
                                         <div>
-                                            {match.players1}
+                                            {match.players1 || "TBD"}
                                         </div>
                                     {/* // ))} */}
                                     <div>
-                                        {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '')+")"}
+                                        {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '-')+")"}
                                     </div>
                                 </div>
                                 <div className="flex flex-grow flex-col items-center w-[16%]">
@@ -240,8 +268,14 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                 </div>
                             </div>
                         </div>
-                    ))
+                    ) }
+                )
                 }
+                {dataSchedule.length === 0 && (
+                    <div className="text-center py-8 px-4 text-templatePaleYellow/50 font-monserrat italic border-2 border-dashed border-templatePaleYellow/10 rounded-xl my-5">
+                        <p className="text-[10px] custom:text-xs sm:text-base leading-relaxed">No matches available for this category or date.</p>
+                    </div>
+                )}
             </div>
 
             {isPopupVisible && selectedSchedule && (
