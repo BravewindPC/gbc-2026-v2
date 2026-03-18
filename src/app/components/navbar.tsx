@@ -15,7 +15,7 @@ export const Navbar = () => {
     return (
         <div className="z-30 relative w-full h-[80px] sm:h-[110px]">
             <Image src="/bg.png" alt="bg" layout="fill" objectFit="cover" />
-            <Image src="/Header.png" alt="header-img" layout="fill" objectFit="cover" />
+            <Image src="/Header.png" alt="header-img" fill className="object-cover" />
             <div className="absolute left-2 flex items-center h-full">
                 <div className="sm:hidden cursor-pointer">
                     <Link href="/">
