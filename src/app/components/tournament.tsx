@@ -13,7 +13,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
     const options = ["Men's Doubles", "Men's Singles", "Mixed Doubles"];
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Men's Doubles");
-    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2026, 4, 25));
+    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2024, 5, 5));
     const [dataSchedule, setDataSchedule] = useState<Match[]>([]);
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [selectedSchedule, setSelectedSchedule] = useState<Match | null>(null);
@@ -98,11 +98,8 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                 Match Schedule 25 April - 10 May 2026
             </div>
             
-            {/* === PERBAIKAN DROPDOWN START === */}
-            {/* Menggunakan inline-block agar lebar container menyesuaikan lebar tombol di dalamnya */}
             <div className="relative z-20 inline-block">
                 
-                {/* Tombol Utama */}
                 <button
                     className="p-3 sm:p-4 mb-1 w-[160px] custom:w-[200px] md:w-[280px] text-sm custom:text-lg md:text-2xl bg-tourOrange text-tourDarkGreen hover:brightness-110 transition duration-300 flex justify-between items-center rounded-lg font-balmy shadow-lg border-2 border-transparent"
                     onClick={() => setIsOpen(!isOpen)}
@@ -113,20 +110,16 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
 
                 {isOpen && (
                     <>
-                        {/* INI KUNCI UNTUK "CLICK OUTSIDE TO CLOSE" */}
-                        {/* Div transparan sebesar layar penuh. Kalau diklik, state isOpen jadi false */}
                         <div 
                             className="fixed inset-0 z-10" 
                             onClick={() => setIsOpen(false)}
                         ></div>
 
-                        {/* Menu Dropdown - w-full akan mengikuti lebar tombol */}
                         <div className="absolute top-full left-0 mt-2 bg-tourOrange w-full rounded-xl shadow-2xl z-20 border-2 border-tourDarkGreen/20 overflow-hidden">
                             <ul className="py-2 text-tourDarkGreen flex flex-col">
                                 {options.map((option) => (
                                 <li
                                     key={option}
-                                    // Teks diperbesar (text-sm sm:text-lg md:text-xl) dan padding diperlebar (py-3)
                                     className={`px-5 py-3 hover:bg-tourDarkGreen hover:text-tourOrange cursor-pointer transition-colors duration-200 font-balmy text-sm sm:text-lg md:text-xl ${selectedOption === option ? 'bg-tourDarkGreen/10' : ''}`}
                                     onClick={() => {
                                         setSelectedOption(option);
@@ -141,11 +134,9 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                     </>
                 )}
             </div>
-            {/* === PERBAIKAN DROPDOWN END === */}
             
             <div className="mt-10 bg-tourDarkGreen w-full rounded-xl overflow-hidden shadow-2xl">
                 
-                {/* BAGIAN TANGGAL */}
                 <div className=" flex justify-evenly w-full bg-tourDarkGreen cursor-pointer border-b-2 border-tourOrange/20">
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 4, 25))}
@@ -199,7 +190,6 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                     </div>
                 </div>
 
-                {/* BAGIAN LIST PERTANDINGAN */}
                 <div className="flex flex-col gap-4 p-3 sm:p-5">
                     {dataSchedule.map((rawMatch, index) => {
                         const match = normalizeMatch(rawMatch);
