@@ -75,19 +75,19 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
         fetchDataGroup().catch(console.error);
     }, [selectedOption, selectedDate]);
 
-    function normalizeMatch(match) {
+    function normalizeMatch(match: Match): Match {
         return {
             ...match,
             players1: match.players1 ?? "TBD",
             players2: match.players2 ?? "TBD",
-            organization1: match.organization1 ?? "",
-            organization2: match.organization2 ?? "",
+            organization1: match.organization1 ?? null,
+            organization2: match.organization2 ?? null,
             score1: match.score1 ?? [],
             score2: match.score2 ?? [],
             dateStart: match.dateStart ?? null,
             dateEnd: match.dateEnd ?? null,
-            court: match.court ?? "-",
-            round: match.round ?? "-"
+            court: match.court ?? null,
+            round: match.round ?? null,
         }
     }
     return (
