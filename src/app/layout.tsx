@@ -19,33 +19,33 @@ const montserrat = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://gbc-ubt-2024.vercel.app/'),
+  metadataBase: new URL('https://gbc-ubt-2026.vercel.app/'),
   title: {
-    default: "GBC UBT 2024",
-    template: `%s | GBC UBT 2024`
+    default: "GBC UBT 2026",
+    template: `%s | GBC UBT 2026`
   },
-  description:"Turnamen Ganesha Badminton Championship 2024 yang diadakan oleh Unit Bulu Tangkis ITB",
+  description:"Turnamen Ganesha Badminton Championship 2026 yang diadakan oleh Unit Bulu Tangkis ITB",
   keywords: [
     "gbc ubt",
-    "gbc ubt 2024",
-    "gbc ubt itb 2024",
+    "gbc ubt 2026",
+    "gbc ubt itb 2026",
     "gbc ubt itb",
     "gbc",
     "ubt",
-    "GBC UBT 2024",
+    "GBC UBT 2026",
     "Ganesha Badminton Championsip",
     "GBC",
     "UBT",
-    "GBC 2024",
+    "GBC 2026",
   ],
-  manifest: "https://gbc-ubt-2024.vercel.app/manifest.webmanifest",
+  manifest: "https://gbc-ubt-2026.vercel.app/manifest.webmanifest",
   openGraph:{
-    title: "GBC UBT 2024 by Unit Bulutangkis ITB",
-    description: "Turnamen Ganesha Badminton Championship 2024 yang diadakan oleh Unit Bulu Tangkis ITB",
+    title: "GBC UBT 2026 by Unit Bulutangkis ITB",
+    description: "Turnamen Ganesha Badminton Championship 2026 yang diadakan oleh Unit Bulu Tangkis ITB",
     type: "website",
     locale: "en",
-    url: "https://gbc-ubt-2024.vercel.app/",
-    siteName: "GBC UBT 2024"
+    url: "https://gbc-ubt-2026.vercel.app/",
+    siteName: "GBC UBT 2026"
   }
 };
 

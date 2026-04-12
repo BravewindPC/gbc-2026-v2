@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: [],
     },
-    sitemap: 'https://gbc-ubt-2024.vercel.app/sitemap.xml',
+    sitemap: 'https://gbc-ubt-2026.vercel.app/sitemap.xml',
   }
 }

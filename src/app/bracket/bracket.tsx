@@ -74,7 +74,7 @@ export default function BracketPage() {
         <>
             <Head>
                     <title>Bracket</title>
-                    <meta name="description" content="Bracket dan Standings Group Stage GBC UBT 2024" />
+                    <meta name="description" content="Bracket dan Standings Group Stage GBC UBT 2026" />
             </Head>
             <div className=" py-8 sm:py-14  w-full h-full font-balmy text-templatePaleYellow">
                 <div className="ml-[7%] flex flex-wrap gap-2 sm:gap-3 md:gap-4">

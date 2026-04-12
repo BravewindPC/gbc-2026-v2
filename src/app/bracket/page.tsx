@@ -8,7 +8,7 @@ import BracketPage from "./bracket";
 
 export const metadata: Metadata = {
     title: "Bracket",
-    description: "Bracket dan Standings Group Stage GBC UBT 2024"
+    description: "Bracket dan Standings Group Stage GBC UBT 2026"
 }
 
 export default function Page() {
