@@ -46,28 +46,25 @@ model VerificationRequest {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  password      String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  accounts      Account[]
-  sessions      Session[]
+  id        String    @id @default(cuid())
+  name      String?
+  password  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  accounts  Account[]
+  sessions  Session[]
 }
 
 model Player {
-  id            String         @id @default(cuid())
-  organization  Organization
-  type          Type?
+  id           String       @id @default(cuid())
+  organization Organization
+  type         Type?
 }
 
 model Match {
-  id            String    @id @default(cuid())
-  number        Int?
+  id            String        @id @default(cuid())
   round         Round?
-  group         Int?
   type          Type?
-  live          Boolean?
   court         Int?
   dateStart     DateTime?
   dateEnd       DateTime?
@@ -76,31 +73,33 @@ model Match {
   umpire        String?
   players1      String?
   players2      String?
-  organization1  Organization?
-  organization2  Organization?
+  organization1 Organization?
+  organization2 Organization?
+  number        Int?
+  group         Int?
+  live          Boolean?
   winners       Organization?
 }
 
 model Group {
-  id            String             @id @default(cuid())
-  type          Type
-  number        Int
-  members       GroupMembership[]
+  id      String            @id @default(cuid())
+  type    Type
+  number  Int
+  members GroupMembership[]
 }
 
 model GroupMembership {
-  id               String          @id @default(uuid())
-  groupId          String
-  group            Group           @relation(fields: [groupId], references: [id])
-  name             String?
-  organization     Organization
-  matchResult      MatchResult?
+  groupId      String
+  organization String
+  id           String       @id @default(uuid())
+  name         String?
+  group        Group        @relation(fields: [groupId], references: [id])
+  matchResult  MatchResult?
 }
 
 model MatchResult {
   id                String          @id @default(uuid())
   groupMembershipId String          @unique
-  groupMembership   GroupMembership @relation(fields: [groupMembershipId], references: [id])
   played            Int?
   win               Int?
   lose              Int?
@@ -109,6 +108,7 @@ model MatchResult {
   scoreGain         Int?
   scoreLose         Int?
   points            Int?
+  groupMembership   GroupMembership @relation(fields: [groupMembershipId], references: [id])
 }
 
 enum Round {

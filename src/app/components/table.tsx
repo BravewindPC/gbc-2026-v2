@@ -54,7 +54,7 @@ const Table: React.FC<TableProps> = ({ type, data }) => {
                   {member.name}
                 </div>
               </td>
-              <td className="p-2">{(member.organization ? Organization[member.organization as keyof typeof Organization] : '')}</td>
+              <td className="p-2">{Organization[member.organization as keyof typeof Organization] ?? member.organization ?? "-"}</td>
               <td className="p-2">{member.matchResult.played}</td>
               <td className="p-2">{`${member.matchResult.win}-${member.matchResult.lose}`}</td>
               <td className="p-2">{`${member.matchResult.setWin}-${member.matchResult.setLose}`}</td>

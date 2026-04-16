@@ -60,6 +60,7 @@ enum Type {
 }
 
 export enum Organization {
+    TPB_SITH = "SITH",
     HIMATIKA = "HIMATIKA",
     TPB_FMIPA = "TPB FMIPA",
     KMPN = "KMPN",
@@ -94,5 +95,9 @@ export enum Organization {
     HMF = 'HMF',
     HMRH = "HMRH",
     HMP_PL = "HMP PL",
+    HIMABIO = "HIMABIO ITB",
+    KMM = "KMM ITB",
+    HIMAFI = "HIMAFI ITB",
+    TPB_SAPPK = "TPB SAPPK",
     TPB_SITH_R = "SITH-R"
   }
