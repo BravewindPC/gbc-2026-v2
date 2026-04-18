@@ -4,7 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function page() {
+export default function Page() {
     const [selectedDay, setSelectedDay] = useState(1);
 
     const days = [1, 2, 3, 4, 5];
