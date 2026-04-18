@@ -2,7 +2,6 @@
 'use client';
 
 import { useState } from "react";
-import Image from "next/image";
 
 export default function Page() {
     const [selectedDay, setSelectedDay] = useState(1);
