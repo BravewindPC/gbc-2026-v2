@@ -1,8 +1,6 @@
 import { Organization, Round, Type } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic";
-
 export const PUT = async (req: NextRequest) => {
     const { db } = await import("@/lib/db");
     const formData = await req.formData();
