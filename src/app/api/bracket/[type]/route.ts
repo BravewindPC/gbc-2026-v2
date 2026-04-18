@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { Type } from "@prisma/client";
 
+export const dynamic = "force-dynamic";
 export async function GET(
   req: Request,
   { params }: { params: { type: string } }
