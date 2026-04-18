@@ -4,7 +4,9 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { db } from "./db";
 
 export const authOptions: NextAuthOptions = {
-    adapter: PrismaAdapter(db),
+    adapter: process.env.NODE_ENV === "production"
+        ? PrismaAdapter(db)
+        : undefined,
     secret:process.env.NEXTAUTH_SECRET,
     session: {
         strategy: "jwt",
