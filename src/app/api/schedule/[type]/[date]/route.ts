@@ -1,9 +1,9 @@
-import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { Type } from '@prisma/client';
 
 export async function GET(req: Request, { params }: { params: { type: string, date: string } }) {
   try {
+      const { db } = await import("@/lib/db");
       const matchType = params.type as Type;
       const dateParam = new Date(params.date + 'T00:00:00.000Z'); // Force UTC timezone
       dateParam.setUTCHours(0, 0, 0, 0); // Set to start of day in UTC
