@@ -1,8 +1,7 @@
-import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 export const PUT = async(req: NextRequest)=>{
-
+    const { db } = await import("@/lib/db");
     const formData = await req.formData();
     const idMatch = formData.get("id")
     const endDateStr = formData.get("dateEnd");

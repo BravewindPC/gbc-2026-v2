@@ -1,26 +1,31 @@
-import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
-import { Type } from '@prisma/client';
+import { Type } from "@prisma/client";
 
-export async function GET(req:Request,{params}:{params: {type:string}}) {
+export async function GET(
+  req: Request,
+  { params }: { params: { type: string } }
+) {
   try {
-      const matchType = params.type as Type;
+    // ✅ pindahkan import ke dalam function
+    const { db } = await import("@/lib/db");
 
-      const match = await db.match.findMany({
-        where: { 
-            type: matchType ,
-            round:{
-                not:"Group"
-            }
-        }
-      });
+    const matchType = params.type as Type;
 
-      return NextResponse.json( match , { status: 200 });
+    const match = await db.match.findMany({
+      where: {
+        type: matchType,
+        round: {
+          not: "Group",
+        },
+      },
+    });
+
+    return NextResponse.json(match, { status: 200 });
   } catch (error) {
-      console.error(error);
-      return NextResponse.json(
-          { error: "Internal server error" },
-          { status: 500 }
-      );
+    console.error(error);
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
   }
 }
