@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 import { Type } from "@prisma/client";
+import { db } from "@/lib/db"; 
+export const dynamic = "force-dynamic";
 
 export async function GET(
   req: Request,
   { params }: { params: { type: string } }
 ) {
   try {
-    // ✅ lazy load Prisma (fix utama)
-    const { db } = await import("@/lib/db");
 
     const groupType = params.type as Type;
 
