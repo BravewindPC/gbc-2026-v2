@@ -10,7 +10,12 @@ export async function GET(
   { params }: { params: { type: string } }
 ) {
   try {
-    const matchType = params.type as Type;
+    const typeFromParams = params?.type;
+
+    if (!typeFromParams) {
+      return NextResponse.json({ error: "Type is required" }, { status: 400 });
+    }
+    const matchType = typeFromParams as Type;
 
     const matches = await db.match.findMany({
       where: {
