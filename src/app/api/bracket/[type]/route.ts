@@ -1,9 +1,10 @@
 // src/app/api/bracket/[type]/route.ts
+export const dynamic = "force-dynamic"; 
+export const fetchCache = "force-no-store";
+
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db"; // Import dari lib, bukan definisikan di sini
 import { Type } from "@prisma/client";
-
-export const dynamic = "force-dynamic";
 
 export async function GET(
   req: Request,
