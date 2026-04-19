@@ -68,14 +68,15 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-center">
-                    <div className=" mt-52 sm:mt-60 lg:mt-32 text-xl custom:text-3xl md:text-5xl font-balmy text-templateWhite thick-shadow text-center">
+                <div className="h-[100px]"></div>
+                {/* <div className="flex flex-col items-center justify-center">
+                     <div className=" mt-52 sm:mt-60 lg:mt-32 text-xl custom:text-3xl md:text-5xl font-balmy text-templateWhite thick-shadow text-center">
                         SPONSORSHIP
                     </div>
                     <div className=" mt-3 sm:mt-8 lg:mt-18 w-full h-[50px] custom:h-[100px] md:h-[180px]">
                         <Image src="/sponsor.png" layout="fill" alt="logo" objectFit="contain" />
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -1,8 +1,8 @@
-import { db } from "@/lib/db";
 import { Organization, Round, Type } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
-
-export const PUT = async(req: NextRequest)=>{
+import { db } from "@/lib/db"; 
+export const dynamic = "force-dynamic";
+export const PUT = async (req: NextRequest) => {
     const formData = await req.formData();
     const idMatch = formData.get("id")
     const scoreData = formData.get("score");

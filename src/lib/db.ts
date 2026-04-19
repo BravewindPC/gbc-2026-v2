@@ -1,11 +1,18 @@
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from "@prisma/client";
 
-const globalForPrisma = globalThis as unknown as {
-    prisma: PrismaClient | undefined
+// 1. Definisi fungsi pembuat instance
+const prismaClientSingleton = () => {
+  return new PrismaClient();
+};
+
+// 2. DI SINI letak blok declare global tersebut
+declare global {
+  // eslint-disable-next-line no-var
+  var prisma: undefined | ReturnType<typeof prismaClientSingleton>;
 }
 
-export const prisma = globalForPrisma.prisma ??  new PrismaClient()
+// 3. Inisialisasi variabel db menggunakan globalThis
+export const db = globalThis.prisma ?? prismaClientSingleton();
 
-if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma
-
-export const db = prisma
+// 4. Jika bukan production, simpan db ke globalThis agar tidak membuat koneksi baru saat reload
+if (process.env.NODE_ENV !== "production") globalThis.prisma = db;

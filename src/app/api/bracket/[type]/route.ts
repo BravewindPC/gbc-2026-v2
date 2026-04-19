@@ -1,26 +1,35 @@
-import { db } from "@/lib/db";
+// src/app/api/bracket/[type]/route.ts
+export const dynamic = "force-dynamic"; 
+export const fetchCache = "force-no-store";
+
 import { NextResponse } from "next/server";
-import { Type } from '@prisma/client';
+import { db } from "@/lib/db"; // Import dari lib, bukan definisikan di sini
+import { Type } from "@prisma/client";
 
-export async function GET(req:Request,{params}:{params: {type:string}}) {
+export async function GET(
+  req: Request,
+  { params }: { params: { type: string } }
+) {
   try {
-      const matchType = params.type as Type;
+    const typeFromParams = params?.type;
 
-      const match = await db.match.findMany({
-        where: { 
-            type: matchType ,
-            round:{
-                not:"Group"
-            }
-        }
-      });
+    if (!typeFromParams) {
+      return NextResponse.json({ error: "Type is required" }, { status: 400 });
+    }
+    const matchType = typeFromParams as Type;
 
-      return NextResponse.json( match , { status: 200 });
+    const matches = await db.match.findMany({
+      where: {
+        type: matchType,
+        round: { not: "Group" },
+      },
+    });
+
+    return NextResponse.json(matches);
   } catch (error) {
-      console.error(error);
-      return NextResponse.json(
-          { error: "Internal server error" },
-          { status: 500 }
-      );
+    console.error(error);
+    return NextResponse.json({ error: "Internal Error" }, { status: 500 });
   }
 }
+
+// HAPUS baris export { db } jika ada di bawah sini!

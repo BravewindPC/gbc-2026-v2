@@ -73,8 +73,8 @@ model Match {
   umpire        String?
   players1      String?
   players2      String?
-  organization1 Organization?
-  organization2 Organization?
+  organization1 String?
+  organization2 String?
   number        Int?
   group         Int?
   live          Boolean?

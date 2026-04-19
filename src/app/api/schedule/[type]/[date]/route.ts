@@ -1,7 +1,7 @@
-import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import { Type } from '@prisma/client';
-
+import { db } from "@/lib/db"; 
+export const dynamic = "force-dynamic";
 export async function GET(req: Request, { params }: { params: { type: string, date: string } }) {
   try {
       const matchType = params.type as Type;
