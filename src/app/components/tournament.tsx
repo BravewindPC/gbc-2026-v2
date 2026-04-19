@@ -90,44 +90,60 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
             round: match.round ?? null,
         }
     }
+
     return (
-        <div className=" px-5 py-8 sm:px-10 sm:py-14 w-[98%] max-w-[1000px] mx-auto font-balmy text-templatePaleYellow">
-            <div className=" text-lg custom:text-2xl md:text-5xl shadow-outline tracking-wide">
-                Match Shedule 25 April - 10 May 2026
+        <div className=" px-5 py-8 sm:px-10 sm:py-14 w-[98%] max-w-[1000px] mx-auto font-balmy text-tourOrange">
+            
+            <div className=" mb-5 md:mb-8 text-lg custom:text-2xl md:text-5xl shadow-outline tracking-wide font-balmy">
+                Match Schedule 25 April - 10 May 2026
             </div>
-            <button
-                className="p-2 sm:p-5 mt-5 w-[130px] custom:w-[180px] md:w-[300px] ml-[1%] text-xs custom:text-xl md:text-3xl bg-primary hover:bg-templatePaleYellow hover:text-templateDarkBlue focus:bg-templatePaleYellow focus:text-templateDarkBlue transition duration-500"
-                onClick={() => setIsOpen(!isOpen)}
-            >
-                <span>{selectedOption}</span>
-                <span className="ml-2 text-sm">▼</span>
-            </button>
-            {isOpen && (
-                <div className=" ml-[3%] absolute mt-2 bg-white w-[200px] rounded-xl shadow-xl z-10 border">
-                    <ul className="py-1 text-gray-700">
-                        {options.map((option) => (
-                        <li
-                            key={option}
-                            className="px-4 py-2 hover:bg-gray-200 cursor-pointer transition rounded-md "
-                            onClick={() => {
-                            setSelectedOption(option);
-                            setIsOpen(false);
-                            }}
-                        >
-                            {option}
-                        </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-            <div className=" mt-10 bg-templateDarkBlue w-full">
-                <div className=" flex justify-evenly w-full bg-primary cursor-pointer">
+            
+            <div className="relative z-20 inline-block">
+                
+                <button
+                    className="p-3 sm:p-4 mb-1 w-[160px] custom:w-[200px] md:w-[280px] text-sm custom:text-lg md:text-2xl bg-tourOrange text-tourDarkGreen hover:brightness-110 transition duration-300 flex justify-between items-center rounded-lg font-balmy shadow-lg border-2 border-transparent"
+                    onClick={() => setIsOpen(!isOpen)}
+                >
+                    <span className="text-left leading-tight">{selectedOption}</span>
+                    <span className={`ml-2 text-xs md:text-sm text-tourDarkGreen transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+                </button>
+
+                {isOpen && (
+                    <>
+                        <div 
+                            className="fixed inset-0 z-10" 
+                            onClick={() => setIsOpen(false)}
+                        ></div>
+
+                        <div className="absolute top-full left-0 mt-2 bg-tourOrange w-full rounded-xl shadow-2xl z-20 border-2 border-tourDarkGreen/20 overflow-hidden">
+                            <ul className="py-2 text-tourDarkGreen flex flex-col">
+                                {options.map((option) => (
+                                <li
+                                    key={option}
+                                    className={`px-5 py-3 hover:bg-tourDarkGreen hover:text-tourOrange cursor-pointer transition-colors duration-200 font-balmy text-sm sm:text-lg md:text-xl ${selectedOption === option ? 'bg-tourDarkGreen/10' : ''}`}
+                                    onClick={() => {
+                                        setSelectedOption(option);
+                                        setIsOpen(false);
+                                    }}
+                                >
+                                    {option}
+                                </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </>
+                )}
+            </div>
+            
+            <div className="mt-10 bg-tourDarkGreen w-full rounded-xl overflow-hidden shadow-2xl">
+                
+                <div className=" flex justify-evenly w-full bg-tourDarkGreen cursor-pointer border-b-2 border-tourOrange/20">
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 4, 25))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 4, 25))
-                            ? 'bg-templatePaleYellow text-templateDarkBlue'
-                            : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
+                            ? 'bg-tourOrange text-tourDarkGreen'
+                            : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
                         25 Apr
@@ -136,8 +152,8 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                         onClick={() => setSelectedDate(new Date(2026, 4, 26))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 4, 26))
-                            ? 'bg-templatePaleYellow text-templateDarkBlue'
-                            : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
+                            ? 'bg-tourOrange text-tourDarkGreen'
+                            : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
                         26 Apr
@@ -146,8 +162,8 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                         onClick={() => setSelectedDate(new Date(2026, 5, 2))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 5, 2))
-                            ? 'bg-templatePaleYellow text-templateDarkBlue'
-                            : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
+                            ? 'bg-tourOrange text-tourDarkGreen'
+                            : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
                         2 May
@@ -156,8 +172,8 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                         onClick={() => setSelectedDate(new Date(2026, 5, 9))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 5, 9))
-                            ? 'bg-templatePaleYellow text-templateDarkBlue'
-                            : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
+                            ? 'bg-tourOrange text-tourDarkGreen'
+                            : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
                         9 May
@@ -166,128 +182,130 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                         onClick={() => setSelectedDate(new Date(2026, 5, 10))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 5, 10))
-                            ? 'bg-templatePaleYellow text-templateDarkBlue'
-                            : 'hover:bg-templatePaleYellow hover:text-templateDarkBlue'
+                            ? 'bg-tourOrange text-tourDarkGreen'
+                            : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
                         10 May
                     </div>
                 </div>
-                {
-                    dataSchedule.map((rawMatch, index) => {
+
+                <div className="flex flex-col gap-4 p-3 sm:p-5">
+                    {dataSchedule.map((rawMatch, index) => {
                         const match = normalizeMatch(rawMatch);
+                        const isEven = index % 2 === 0;
                         return (
                         <div 
                             key={index}
                             onClick={() => handleScheduleClick(match)} 
-                            className={`text-[7px] custom:text-[10px] sm:text-lg h-20 custom:h-32 sm:h-40 cursor-pointer font-monserrat font-bold ${
-                                index % 2 === 0
-                                ? 'bg-templateDarkBlue text-templatePaleYellow'
-                                : 'bg-templatePaleYellow text-templateDarkBlue'
+                            className={`relative overflow-hidden cursor-pointer rounded-2xl shadow-lg border-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex flex-col justify-center px-3 py-4 sm:px-6 sm:py-5 ${
+                                isEven
+                                ? 'bg-tourDarkGreen text-tourOrange border-tourOrange/40'
+                                : 'bg-tourOrange text-tourDarkGreen border-tourDarkGreen/40'
                             }`}
                         >
-                            <div className=" flex justify-between px-[5px] pt-1 custom:px-2 custom:pt-2 sm:px-3 sm:pt-3 h-[2%] text-[6px] custom:text-[8px] sm:text-sm">
-                                <div className="flex justify-center items-center">
-                                    {match.dateStart ? 
-                                        `Starting at ${new Date(match.dateStart).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false,timeZone:'UTC' })}` :
-                                        'Start time TBA'
-                                    }
-                                </div>
-                                <div className="flex justify-center items-center gap-1 custom:gap-2 sm:gap-3">
-                                {match.live ? (
-                                    <div className="inline-flex items-center text-red-500 gap-[3px] custom:gap-[7px] sm:gap-[10px]">
-                                        <span className="w-[6px] h-[6px] custom:w-2 custom:h-2 sm:w-[14px] sm:h-[14px] bg-red-500 rounded-full animate-blink duration-1000"></span>
-                                        Live
-                                    </div>
-                                ) : (() => {
-                                    const startDate = match.dateStart ? new Date(match.dateStart) : null;
-                                    const endDate = match.dateEnd ? new Date(match.dateEnd) : null;
-                                    
-                                    if (startDate && endDate && endDate > startDate) {
-                                        const totalMinutes = Math.round(Math.abs(endDate.getTime() - startDate.getTime()) / (1000 * 60));
-                                        const hours = Math.floor(totalMinutes / 60);
-                                        const minutes = totalMinutes % 60;
-                                        return (
-                                            <div className="flex justify-center items-center gap-1 custom:gap-2 sm:gap-3">
-                                                <FaClock />
-                                                <span>{`${hours}:${minutes.toString().padStart(2, '0')}`}</span>
-                                            </div>
-                                        );
-                                    }
-                                    return null;
-                                })()}
-                                </div>
-                            </div>
-                            <div className="flex w-full h-[98%] transition-transform duration-200 ease-in-out transform hover:scale-[103%]">
-                                <div className="flex flex-col flex-grow justify-center items-center w-[42%]">
-                                    {/* {match.players1.split('/').map((player, playerIndex, playerArray) => ( */}
-                                        <div>
-                                            {match.players1 || "TBD"}
-                                        </div>
-                                    {/* // ))} */}
-                                    <div>
-                                        {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '-')+")"}
-                                    </div>
-                                </div>
-                                <div className="flex flex-grow flex-col items-center w-[16%]">
-                                    
-                                    <div className="flex justify-center items-center text-center h-[2%] text-[6px] custom:text-[8px] sm:text-sm">
-                                        {match.court && <div>Court {match.court}</div>}
-                                    </div>
-                                    <div className="flex items-end h-[55%] font-balmy font-thin">
-                                        {match.round === 'Group' ? `${match.round} ${match.group}` : match.round}
-                                    </div>
-                                    <div className="flex flex-col text-center text-[6px] custom:text-[8px] sm:text-sm">
-                                        {match.score1.length === match.score2.length &&
-                                            <>
-                                                {match.score1.length > 2 ? (
-                                                    <>
-                                                        <div>
-                                                            {match.score1.slice(0, 2).map((score, index) => `${score}-${match.score2[index]}`).join(' ')}
-                                                        </div>
-                                                        {match.score1.slice(2).map((score, index) => (
-                                                            <div key={index + 2}>{score}-{match.score2[index + 2]}</div>
-                                                        ))}
-                                                    </>
-                                                ) : (
-                                                    <div>
-                                                        {match.score1.map((score, index) => `${score}-${match.score2[index]}`).join(' ')}
-                                                    </div>
-                                                )}
-                                            </>
+                            <div className={`absolute -right-6 -top-6 w-20 h-20 sm:w-32 sm:h-32 rounded-full opacity-10 pointer-events-none ${isEven ? 'bg-tourOrange' : 'bg-tourDarkGreen'}`}></div>
+                            <div className={`absolute -left-4 -bottom-4 w-12 h-12 sm:w-20 sm:h-20 rounded-full opacity-10 pointer-events-none ${isEven ? 'bg-tourOrange' : 'bg-tourDarkGreen'}`}></div>
+
+                            <div className="relative z-10 flex flex-col w-full gap-3 sm:gap-4">
+                                <div className="flex justify-between items-start w-full text-[7px] custom:text-[9px] sm:text-xs font-monserrat font-bold opacity-90 border-b border-dashed border-current pb-2">
+                                    <div className="w-1/3 text-left">
+                                        {match.dateStart ? 
+                                            `Starting at ${new Date(match.dateStart).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false,timeZone:'UTC' })}` :
+                                            'Start time TBA'
                                         }
                                     </div>
+                                    
+                                    <div className="w-1/3 text-center tracking-widest uppercase">
+                                        {match.court ? `Court ${match.court}` : ''}
+                                    </div>
+
+                                    <div className="w-1/3 flex justify-end">
+                                        {match.live ? (
+                                            <div className="inline-flex items-center text-red-500 gap-[3px] custom:gap-[7px] sm:gap-[10px]">
+                                                <span className="w-[6px] h-[6px] custom:w-2 custom:h-2 sm:w-[10px] sm:h-[10px] bg-red-500 rounded-full animate-blink duration-1000"></span>
+                                                Live
+                                            </div>
+                                        ) : (() => {
+                                            const startDate = match.dateStart ? new Date(match.dateStart) : null;
+                                            const endDate = match.dateEnd ? new Date(match.dateEnd) : null;
+                                            
+                                            if (startDate && endDate && endDate > startDate) {
+                                                const totalMinutes = Math.round(Math.abs(endDate.getTime() - startDate.getTime()) / (1000 * 60));
+                                                const hours = Math.floor(totalMinutes / 60);
+                                                const minutes = totalMinutes % 60;
+                                                return (
+                                                    <div className="flex items-center justify-end gap-1 sm:gap-2">
+                                                        <FaClock className="text-[8px] sm:text-sm"/>
+                                                        <span>{`${hours}:${minutes.toString().padStart(2, '0')}`}</span>
+                                                    </div>
+                                                );
+                                            }
+                                            return null;
+                                        })()}
+                                    </div>
                                 </div>
-                                <div className="flex flex-col flex-grow justify-center items-center w-[42%]">
-                                        <div>
-                                            {match.players2}
+                                
+                                <div className="flex w-full items-center justify-between">
+                                    
+                                    <div className="flex flex-col items-center justify-center w-[35%] text-center">
+                                        <div className="font-balmy font-normal text-[9px] custom:text-[12px] sm:text-xl leading-snug px-1">
+                                            {match.players1 || "TBD"}
                                         </div>
-                                    <div>
-                                        {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
+                                        <div className="font-monserrat font-bold text-[8px] custom:text-[10px] sm:text-sm mt-1 sm:mt-2">
+                                            {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '-')+")"}
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-col items-center justify-center w-[30%] gap-1 sm:gap-2">
+                                        <div className="font-balmy font-normal text-[8px] custom:text-[10px] sm:text-sm tracking-widest bg-black/10 px-3 py-1 rounded-full backdrop-blur-sm">
+                                            {match.round === 'Group' ? `${match.round} ${match.group}` : match.round}
+                                        </div>
+                                        
+                                        <div className="flex flex-col items-center font-balmy font-normal text-[10px] custom:text-[12px] sm:text-2xl gap-1">
+                                            {match.score1.length > 0 && match.score1.length === match.score2.length ? (
+                                                match.score1.map((score, idx) => (
+                                                    <div key={idx} className="flex items-center justify-center w-full">
+                                                        <span className="w-7 custom:w-9 sm:w-12 text-right">{score}</span>
+                                                        <span className="mx-1 sm:mx-3 text-[8px] sm:text-lg opacity-50">-</span>
+                                                        <span className="w-7 custom:w-9 sm:w-12 text-left">{match.score2[idx]}</span>
+                                                    </div>
+                                                ))
+                                            ) : (
+                                                <span className="opacity-50 text-[10px] sm:text-lg mt-1">VS</span>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    <div className="flex flex-col items-center justify-center w-[35%] text-center">
+                                        <div className="font-balmy font-normal text-[9px] custom:text-[12px] sm:text-xl leading-snug px-1">
+                                            {match.players2 || "TBD"}
+                                        </div>
+                                        <div className="font-monserrat font-bold text-[8px] custom:text-[10px] sm:text-sm mt-1 sm:mt-2">
+                                            {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    ) }
-                )
-                }
+                        ) }
+                    )}
+                </div>
+
                 {dataSchedule.length === 0 && (
-                    <div className="text-center py-8 px-4 text-templatePaleYellow/50 font-monserrat italic border-2 border-dashed border-templatePaleYellow/10 rounded-xl my-5">
+                    <div className="text-center mx-5 mb-5 py-8 px-4 text-tourDarkGreen font-balmy italic border-2 border-dashed border-tourDarkGreen/30 rounded-xl bg-white/20 backdrop-blur-sm">
                         <p className="text-[10px] custom:text-xs sm:text-base leading-relaxed">No matches available for this category or date.</p>
                     </div>
                 )}
             </div>
 
             {isPopupVisible && selectedSchedule && (
-                client ? 
-                    <PopupClient 
-                        onClose={() => setIsPopupVisible(false)} 
-                        match={selectedSchedule}
-                    /> : 
-                    <PopupAdmin
-                        onClose={() => setIsPopupVisible(false)} 
-                        match={selectedSchedule}
-                    />
+                <div className="relative z-[999]">
+                    {client ? 
+                        <PopupClient onClose={() => setIsPopupVisible(false)} match={selectedSchedule} /> : 
+                        <PopupAdmin onClose={() => setIsPopupVisible(false)} match={selectedSchedule} />
+                    }
+                </div>
             )}
         </div>
     );
