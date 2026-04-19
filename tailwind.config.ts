@@ -45,7 +45,10 @@ const config: Config = {
         templatelightBlue:'#C5E4FC',
         templateYellow: '#F5C400',
         templatePaleYellow: '#FFF0BA',
-        templateWhite: '#FFFDF0'
+        templateWhite: '#FFFDF0',
+
+        tourDarkGreen: '#144240',
+        tourOrange : '#f1b634'
       },
       fontFamily: {
         balmy: "var(--font-balmy)",

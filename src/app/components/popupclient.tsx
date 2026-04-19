@@ -62,9 +62,9 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
     }, [match?.score1,match?.score2]);
 
     return(
-        <div className="fixed inset-0  bg-black bg-opacity-50 flex justify-center items-center text-black font-monserrat font-bold">
+        <div className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex justify-center items-center text-black font-balmy font-bold">
             {match && 
-                <div className=" flex flex-col bg-templateDarkBlue w-[80%] max-w-[800px] p-2 sm:p-5 rounded-lg text-templatePaleYellow">
+                <div className=" flex flex-col bg-tourDarkGreen w-[80%] max-w-[800px] p-2 sm:p-5 rounded-lg text-tourOrange">
                     {match.dateStart && 
                     <div className=" flex justify-between items-center text-[7px] custom:text-sm sm:text-lg">
                         {
@@ -87,7 +87,7 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
                             );
                             })()
                         }
-                        <button className=" text-templatePaleYellow" onClick={onClose}>
+                        <button className=" text-tourOrange" onClick={onClose}>
                             <IoCloseCircle size="25px" className="cursor-pointer sm:hidden"/>
                             <IoCloseCircle size="35px" className="cursor-pointer hidden sm:inline-block"/>
                         </button>
@@ -135,7 +135,7 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
                                     <div
                                         className={`px-1 custom:px-2 text-[6px] custom:text-xs sm:text-lg ${
                                             (score[0] >= 21) && Math.abs(score[0] - score[1]) >= 2
-                                            ? (score[0] > score[1] ? 'bg-templatePaleYellow text-templateDarkBlue' : '')
+                                            ? (score[0] > score[1] ? 'bg-tourOrange text-tourDarkGreen' : '')
                                             : ''
                                         }`}
                                     >
@@ -147,7 +147,7 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
                                     <div
                                         className={`px-1 custom:px-2 text-[6px] custom:text-xs sm:text-lg ${
                                             (score[1] >= 21) && Math.abs(score[0] - score[1]) >= 2
-                                            ? (score[1] > score[0] ? 'bg-templatePaleYellow text-templateDarkBlue' : '')
+                                            ? (score[1] > score[0] ? 'bg-tourOrange text-tourDarkGreen' : '')
                                             : ''
                                         }`}
                                     >
@@ -163,7 +163,7 @@ export const PopupClient = ({ onClose, match }: { onClose: () => void; match: Ma
                     {match.live && (
                         <div className="flex w-full justify-center items-center ">
                             <div className="w-[70%] text-center mt-4">
-                                <div className="text-templatePaleYellow gap-[3px] custom:gap-[7px] sm:gap-[10px] text-[8px] custom:text-xs sm:text-lg px-2 py-1 bg-opacity-75 rounded">
+                                <div className="text-tourOrange gap-[3px] custom:gap-[7px] sm:gap-[10px] text-[8px] custom:text-xs sm:text-lg px-2 py-1 bg-opacity-75 rounded">
                                 This score is taken directly from the ongoing match at court {match.court} in GOR Koni
                                 </div>
                             </div>
