@@ -74,7 +74,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                     {(() => {
                                         const match = finals.find(match => match.number === 7);
                                         if (match && match.organization2) {
-                                            return Organization[match.organization2 as keyof typeof Organization];
+                                            return Organization[match.organization2 as keyof typeof Organization] ?? match.organization2 ?? "-";
                                         } else {
                                             return "N/A";
                                         }
@@ -124,7 +124,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                             {(() => {
                                                                 const match = semifinals.find(match => match.number === 5);
                                                                 if (match && match.organization1) {
-                                                                    return Organization[match.organization1 as keyof typeof Organization];
+                                                                    return Organization[match.organization1 as keyof typeof Organization] ?? match.organization1 ?? "-";
                                                                 } else {
                                                                     return "N/A";
                                                                 }
