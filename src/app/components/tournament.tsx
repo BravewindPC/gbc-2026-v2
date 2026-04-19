@@ -140,7 +140,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                 <div className=" flex justify-evenly w-full bg-tourDarkGreen cursor-pointer border-b-2 border-tourOrange/20">
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 4, 25))}
-                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
+                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 4, 25))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
@@ -150,7 +150,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                     </div>
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 4, 26))}
-                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
+                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 4, 26))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
@@ -160,7 +160,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                     </div>
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 5, 2))}
-                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
+                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 5, 2))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
@@ -170,7 +170,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                     </div>
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 5, 9))}
-                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
+                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 5, 9))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
@@ -180,7 +180,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                     </div>
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 5, 10))}
-                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-lg md:text-2xl flex justify-center items-center w-full transition duration-200 ease-in ${
+                        className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
                             formatDate(selectedDate) === formatDate(new Date(2026, 5, 10))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
