@@ -1,5 +1,5 @@
 import { GroupData, Organization } from '@/lib/type';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 interface TableProps {
   type: string;
@@ -9,10 +9,10 @@ interface TableProps {
 const Table: React.FC<TableProps> = ({ type, data }) => {
 
   return (
-    <div className="overflow-x-auto">
-      <table className="min-w-[280px] w-[700px] md:w-[1000px] max-w-[1660px] mx-auto text-xs md:text-sm">
+    <div className="overflow-x-auto rounded-lg border border-tourOrange/25">
+      <table className="min-w-[280px] w-[700px] md:w-[1000px] max-w-[1660px] mx-auto text-xs md:text-sm text-tourOrange">
         <thead>
-          <tr className="bg-gray-200 text-left text-gray-600">
+          <tr className="bg-tourOrange text-left text-tourDarkGreen">
             <th className="p-2">No</th>
             <th className="p-2 w-20 md:w-48">Name</th>
             <th className="p-2">HMJ/TPB</th>
@@ -47,7 +47,7 @@ const Table: React.FC<TableProps> = ({ type, data }) => {
             }
           })
           .map((member, index) => (
-            <tr key={index} className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'} font-monserrat font-bold`}>
+            <tr key={index} className={`${index % 2 === 0 ? 'bg-[#1A5150]' : 'bg-[#1f5a58]'} font-monserrat font-bold border-b border-tourOrange/10`}>
               <td className="p-2">{index+1}</td>
               <td className="p-2">
                 <div className="w-[200px] max-w-full overflow-auto hide-scrollbar whitespace-nowrap">
