@@ -13,7 +13,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
     const options = ["Men's Doubles", "Men's Singles", "Mixed Doubles"];
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Men's Doubles");
-    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2024, 5, 5));
+    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2026, 4, 25));
     const [dataSchedule, setDataSchedule] = useState<Match[]>([]);
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [selectedSchedule, setSelectedSchedule] = useState<Match | null>(null);
@@ -159,14 +159,14 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                         26 Apr
                     </div>
                     <div 
-                        onClick={() => setSelectedDate(new Date(2026, 5, 2))}
+                        onClick={() => setSelectedDate(new Date(2026, 5, 3))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
-                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 2))
+                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 3))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
-                        2 May
+                        3 May
                     </div>
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 5, 9))}
@@ -253,7 +253,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                             {match.players1 || "TBD"}
                                         </div>
                                         <div className="font-monserrat font-bold text-[8px] custom:text-[10px] sm:text-sm mt-1 sm:mt-2">
-                                            {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '-')+")"}
+                                            {match.organization1}
                                         </div>
                                     </div>
 
@@ -282,7 +282,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                             {match.players2 || "TBD"}
                                         </div>
                                         <div className="font-monserrat font-bold text-[8px] custom:text-[10px] sm:text-sm mt-1 sm:mt-2">
-                                            {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
+                                            {match.organization2}
                                         </div>
                                     </div>
                                 </div>
