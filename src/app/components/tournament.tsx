@@ -259,9 +259,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                     </div>
 
                                     <div className="flex flex-col items-center justify-center w-[30%] gap-1 sm:gap-2">
-                                        <div className="font-balmy font-normal text-[8px] custom:text-[10px] sm:text-sm tracking-widest bg-black/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                                            {match.round === 'Group' ? `${match.round} ${match.group}` : match.round}
-                                        </div>
+                                    
                                         
                                         <div className="flex flex-col items-center font-balmy font-normal text-[10px] custom:text-[12px] sm:text-2xl gap-1">
                                             {match.score1.length > 0 && match.score1.length === match.score2.length ? (
