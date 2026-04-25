@@ -1,123 +1,88 @@
-"use client"
-import { useEffect, useState } from "react";
-import Bracket from "../components/bracket";
-import Table from "../components/table";
-import { GroupData, Match } from "@/lib/type";
-import Head from "next/head";
+"use client";
+
+import { useMemo, useState } from "react";
 
 export default function BracketPage() {
     const [selectedOption, setSelectedOption] = useState("Men's Doubles");
-    const [dataGroup, setDataGroup] = useState<GroupData[]>([]);
-    const [dataBracket, setDataBracket] = useState<Match[]>([]);
+    const [isOpen, setIsOpen] = useState(false);
 
-    useEffect(() => {
-        const fetchDataGroup = async () => {
-            try {
-                let type;
-                switch (selectedOption) {
-                    case "Men's Singles":
-                        type = "MenSingle";
-                        break;
-                    case "Men's Doubles":
-                        type = "MenDouble";
-                        break;
-                    case "Mixed Doubles":
-                        type = "MixedDouble";
-                        break;
-                    default:
-                        type = "MenDouble";
-                }
-                const response = await fetch(`/api/groups/${type}`);
-                if (!response.ok) {
-                throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setDataGroup(data);
-            } catch (error) {
-                console.error("Failed to fetch data:", error);
-            }
-        };
-
-        const fetchDataBracket = async () => {
-            try {
-                let type;
-                switch (selectedOption) {
-                    case "Men's Singles":
-                        type = "MenSingle";
-                        break;
-                    case "Men's Doubles":
-                        type = "MenDouble";
-                        break;
-                    case "Mixed Doubles":
-                        type = "MixedDouble";
-                        break;
-                    default:
-                        type = "MenDouble";
-                }
-                const response = await fetch(`/api/bracket/${type}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await response.json();
-                setDataBracket(data);
-            } catch (error) {
-                console.error("Failed to fetch data:", error);
-            }
-        };
-
-        fetchDataGroup();
-        fetchDataBracket();
+    const bracketImageSrc = useMemo(() => {
+        switch (selectedOption) {
+            case "Men's Singles":
+                return "/MENSINGLE.png";
+            case "Men's Doubles":
+                return "/MENDOUBLE.png";
+            case "Mixed Doubles":
+                return "/MIXEDDOUBLE.png";
+            default:
+                return "/MENDOUBLE.png";
+        }
     }, [selectedOption]);
 
     const options = ["Men's Doubles", "Men's Singles", "Mixed Doubles"];
-    return (
-        <>
-            <Head>
-                    <title>Bracket</title>
-                    <meta name="description" content="Bracket dan Standings Group Stage GBC UBT 2026" />
-            </Head>
-            <div className=" py-8 sm:py-14  w-full h-full font-balmy text-templatePaleYellow">
-                <div className="ml-[7%] flex flex-wrap gap-2 sm:gap-3 md:gap-4">
-                    {options.map((option) => {
-                        const isSelected = selectedOption === option;
 
-                        return (
-                            <button
-                                key={option}
-                                type="button"
-                                onClick={() => setSelectedOption(option)}
-                                className={`p-2 sm:p-4 md:p-5 w-[130px] custom:w-[180px] md:w-[300px] text-xs custom:text-lg md:text-1xl leading-tight transition duration-300 ${
-                                    isSelected
-                                        ? "bg-templatePaleYellow text-[#175933]"
-                                        : "bg-[#175933] text-templatePaleYellow hover:bg-templatePaleYellow hover:text-[#175933]"
-                                }`}
-                            >
-                                {option}
-                            </button>
-                        );
-                    })}
+    return (
+        <div className="w-full min-h-screen bg-gradient-custom2 text-tourOrange">
+            <div className="px-5 py-8 sm:px-10 sm:py-14 w-[98%] max-w-[1200px] mx-auto font-balmy">
+                
+                <div className="mb-5 md:mb-8 text-lg custom:text-2xl md:text-5xl shadow-outline tracking-wide font-balmy">
+                    Bracket
                 </div>
-                <div className=" mt-5 sm:mt-20 overflow-auto hide-scrollbar w-[85%] mx-auto h-[700px] sm:h-[900px] text-[#175933]">
-                    <div className=" flex items-center bg-[#175933] min-w-[900px] h-full mx-auto overflow-x-auto hide-scrollbar">
-                        <Bracket key={`bracket-${selectedOption}`} data={dataBracket}/>
+
+                <div className="relative z-20 h-[50px] sm:h-[60px] md:h-[70px]">
+                    <div className="absolute top-0 left-0 w-[160px] custom:w-[200px] md:w-[280px]">
+                        <button
+                            className="p-3 sm:p-4 mb-1 w-full text-sm custom:text-lg md:text-2xl bg-tourOrange text-tourDarkGreen hover:brightness-110 transition duration-300 flex justify-between items-center rounded-lg font-balmy shadow-lg border-2 border-transparent"
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            <span className="text-left leading-tight">{selectedOption}</span>
+                            <span className={`ml-2 text-xs md:text-sm text-tourDarkGreen transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+                        </button>
+
+                        {isOpen && (
+                            <>
+                                <div 
+                                    className="fixed inset-0 z-10" 
+                                    onClick={() => setIsOpen(false)}
+                                ></div>
+
+                                <div className="absolute top-full left-0 mt-2 bg-tourOrange w-full rounded-xl shadow-2xl z-20 border-2 border-tourDarkGreen/20 overflow-hidden">
+                                    <ul className="py-2 text-tourDarkGreen flex flex-col">
+                                        {options.map((option) => (
+                                        <li
+                                            key={option}
+                                            className={`px-5 py-3 hover:bg-tourDarkGreen hover:text-tourOrange cursor-pointer transition-colors duration-200 font-balmy text-sm sm:text-lg md:text-xl ${selectedOption === option ? 'bg-tourDarkGreen/10' : ''}`}
+                                            onClick={() => {
+                                                setSelectedOption(option);
+                                                setIsOpen(false);
+                                            }}
+                                        >
+                                            {option}
+                                        </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
-                {dataGroup.map((item,index) => (<div key={`group-${index}`} className=" my-5 sm:my-20 overflow-auto w-[85%] mx-auto text-[#175933]">
-                    <div className="p-2 text-[#175933] shadow-outline-reverse-low text-xl">Group {index+1}</div>
-                    <div className=" flex items-center bg-inherit mx-auto overflow-x-auto hide-scrollbar">
-                        <Table
-                            key={`table-${index}-${selectedOption}`}
-                            type={
-                                selectedOption === "Men's Singles" ? "MenSingle" :
-                                selectedOption === "Men's Doubles" ? "MenDouble" :
-                                selectedOption === "Mixed Doubles" ? "MixedDouble" :
-                                "MenDouble"
-                            }
-                            data={item}
-                        />
+
+                <div className="relative z-0 bg-tourDarkGreen w-full rounded-xl overflow-hidden shadow-2xl border border-tourOrange/20 mt-2 sm:mt-8">
+                    <div className="overflow-auto hide-scrollbar w-full h-[700px] sm:h-[700px]">
+                        <div
+                            className="min-w-[900px] h-full mx-auto overflow-x-auto overflow-y-auto hide-scrollbar p-3 sm:p-6 bg-cover bg-center bg-no-repeat"
+                            style={{ backgroundImage: `url('/bgbg.png')` }}
+                        >
+                            <img
+                                src={bracketImageSrc}
+                                alt={`${selectedOption} bracket`}
+                                className="w-[1365px] max-w-none h-auto rounded-md"
+                            />
+                        </div>
                     </div>
-                </div>))}
+                </div>
+                
             </div>
-        </>
+        </div>
     );
 }
