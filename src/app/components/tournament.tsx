@@ -13,7 +13,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
     const options = ["Men's Doubles", "Men's Singles", "Mixed Doubles"];
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState("Men's Doubles");
-    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2024, 5, 5));
+    const [selectedDate, setSelectedDate] = useState<Date>(new Date(2026, 4, 25));
     const [dataSchedule, setDataSchedule] = useState<Match[]>([]);
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [selectedSchedule, setSelectedSchedule] = useState<Match | null>(null);
@@ -98,41 +98,42 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                 Match Schedule 25 April - 10 May 2026
             </div>
             
-            <div className="relative z-20 inline-block">
-                
-                <button
-                    className="p-3 sm:p-4 mb-1 w-[160px] custom:w-[200px] md:w-[280px] text-sm custom:text-lg md:text-2xl bg-tourOrange text-tourDarkGreen hover:brightness-110 transition duration-300 flex justify-between items-center rounded-lg font-balmy shadow-lg border-2 border-transparent"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
-                    <span className="text-left leading-tight">{selectedOption}</span>
-                    <span className={`ml-2 text-xs md:text-sm text-tourDarkGreen transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
-                </button>
+            <div className="relative z-20 h-[50px] sm:h-[60px] md:h-[70px]"> {/* Fixed height container prevents pushing */}
+                <div className="absolute top-0 left-0"> {/* Anchor the dropdown to the top-left */}
+                    <button
+                        className="p-3 sm:p-4 mb-1 w-[160px] custom:w-[200px] md:w-[280px] text-sm custom:text-lg md:text-2xl bg-tourOrange text-tourDarkGreen hover:brightness-110 transition duration-300 flex justify-between items-center rounded-lg font-balmy shadow-lg border-2 border-transparent"
+                        onClick={() => setIsOpen(!isOpen)}
+                    >
+                        <span className="text-left leading-tight">{selectedOption}</span>
+                        <span className={`ml-2 text-xs md:text-sm text-tourDarkGreen transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>▼</span>
+                    </button>
 
-                {isOpen && (
-                    <>
-                        <div 
-                            className="fixed inset-0 z-10" 
-                            onClick={() => setIsOpen(false)}
-                        ></div>
+                    {isOpen && (
+                        <>
+                            <div 
+                                className="fixed inset-0 z-10" 
+                                onClick={() => setIsOpen(false)}
+                            ></div>
 
-                        <div className="absolute top-full left-0 mt-2 bg-tourOrange w-full rounded-xl shadow-2xl z-20 border-2 border-tourDarkGreen/20 overflow-hidden">
-                            <ul className="py-2 text-tourDarkGreen flex flex-col">
-                                {options.map((option) => (
-                                <li
-                                    key={option}
-                                    className={`px-5 py-3 hover:bg-tourDarkGreen hover:text-tourOrange cursor-pointer transition-colors duration-200 font-balmy text-sm sm:text-lg md:text-xl ${selectedOption === option ? 'bg-tourDarkGreen/10' : ''}`}
-                                    onClick={() => {
-                                        setSelectedOption(option);
-                                        setIsOpen(false);
-                                    }}
-                                >
-                                    {option}
-                                </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </>
-                )}
+                            <div className="absolute top-full left-0 mt-2 bg-tourOrange w-full rounded-xl shadow-2xl z-20 border-2 border-tourDarkGreen/20 overflow-hidden">
+                                <ul className="py-2 text-tourDarkGreen flex flex-col">
+                                    {options.map((option) => (
+                                    <li
+                                        key={option}
+                                        className={`px-5 py-3 hover:bg-tourDarkGreen hover:text-tourOrange cursor-pointer transition-colors duration-200 font-balmy text-sm sm:text-lg md:text-xl ${selectedOption === option ? 'bg-tourDarkGreen/10' : ''}`}
+                                        onClick={() => {
+                                            setSelectedOption(option);
+                                            setIsOpen(false);
+                                        }}
+                                    >
+                                        {option}
+                                    </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </>
+                    )}
+                </div>
             </div>
             
             <div className="mt-10 bg-tourDarkGreen w-full rounded-xl overflow-hidden shadow-2xl">
@@ -159,14 +160,14 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                         26 Apr
                     </div>
                     <div 
-                        onClick={() => setSelectedDate(new Date(2026, 5, 2))}
+                        onClick={() => setSelectedDate(new Date(2026, 5, 3))}
                         className={`h-8 custom:h-10 md:h-14 text-[10px] custom:text-[12px] sm:text-lg md:text-2xl whitespace-nowrap leading-none flex justify-center items-center w-full transition duration-200 ease-in ${
-                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 2))
+                            formatDate(selectedDate) === formatDate(new Date(2026, 5, 3))
                             ? 'bg-tourOrange text-tourDarkGreen'
                             : 'text-tourOrange hover:bg-tourOrange hover:text-tourDarkGreen'
                         }`}
                     >
-                        2 May
+                        3 May
                     </div>
                     <div 
                         onClick={() => setSelectedDate(new Date(2026, 5, 9))}
@@ -253,14 +254,12 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                             {match.players1 || "TBD"}
                                         </div>
                                         <div className="font-monserrat font-bold text-[8px] custom:text-[10px] sm:text-sm mt-1 sm:mt-2">
-                                            {"("+(match.organization1 ? Organization[match.organization1 as keyof typeof Organization] : '-')+")"}
+                                            {match.organization1}
                                         </div>
                                     </div>
 
                                     <div className="flex flex-col items-center justify-center w-[30%] gap-1 sm:gap-2">
-                                        <div className="font-balmy font-normal text-[8px] custom:text-[10px] sm:text-sm tracking-widest bg-black/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                                            {match.round === 'Group' ? `${match.round} ${match.group}` : match.round}
-                                        </div>
+                                    
                                         
                                         <div className="flex flex-col items-center font-balmy font-normal text-[10px] custom:text-[12px] sm:text-2xl gap-1">
                                             {match.score1.length > 0 && match.score1.length === match.score2.length ? (
@@ -282,7 +281,7 @@ const Tournament: React.FC<TournamentProps> = ({ client }) => {
                                             {match.players2 || "TBD"}
                                         </div>
                                         <div className="font-monserrat font-bold text-[8px] custom:text-[10px] sm:text-sm mt-1 sm:mt-2">
-                                            {"("+(match.organization2 ? Organization[match.organization2 as keyof typeof Organization] : '')+")"}
+                                            {match.organization2}
                                         </div>
                                     </div>
                                 </div>
