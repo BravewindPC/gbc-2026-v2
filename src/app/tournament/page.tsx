@@ -5,7 +5,7 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
     title: "Tournament",
-    description: "Jadwal Pertandingan Semua Sektor GBC UBT 2024"
+    description: "Jadwal Pertandingan Semua Sektor GBC UBT 2026"
 }
 
 const Page = async () => {

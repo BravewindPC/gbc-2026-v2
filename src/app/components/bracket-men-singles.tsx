@@ -21,13 +21,13 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
     }, [data]);
     
     return (
-        <div className="mx-4 sm:mx-10 flex flex-col sm:flex-row h-auto sm:h-[600px] justify-center overflow-x-auto">
+        <div className=" ml-10 mr-10 flex h-[600px] justify-center">
             <div className="flex flex-row-reverse">
-                <div className=" relative ml-2 sm:ml-[50px] flex items-center after:absolute after:w-[50px] after:h-[2px] after:left-0 after:top-[50%] after:bg-templatePaleYellow after:translate-x-[-100%]">
+                <div className=" relative ml-[50px] flex items-center after:absolute after:w-[50px] after:h-[2px] after:left-0 after:top-[50%] after:bg-templatePaleYellow after:translate-x-[-100%]">
                     <div className=" flex items-center w-[200px] h-[25px] sm:w-[400px] sm:h-[50px] m-0 bg-templatePaleYellow">Winner</div>
                 </div>
                 <div className="flex flex-row-reverse">
-                    <div className=" relative ml-2 sm:ml-[50px] flex items-center after:absolute after:w-[25px] after:h-[2px] after:left-0 after:top-[50%] after:bg-templatePaleYellow after:translate-x-[-100%]">
+                    <div className=" relative ml-[50px] flex items-center after:absolute after:w-[25px] after:h-[2px] after:left-0 after:top-[50%] after:bg-templatePaleYellow after:translate-x-[-100%]">
                         <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                             {/* Match 7 */}
                             <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
@@ -116,7 +116,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                 <div className="flex flex-col justify-center">
                                     <div className="flex items-start justify-end my-[10px] relative before:absolute before:bg-templatePaleYellow before:right-0 before:top-[50%] before:translate-x-[100%] before:w-[25px] before:h-[2px] after:absolute after:bg-templatePaleYellow after:right-[-25px] after:w-[2px] after:top-[50%] item-child last:after:translate-y-[-100%] only:after:hidden">
                                         <div className="flex flex-row-reverse">
-                                            <div className="relative ml-2 sm:ml-[50px] flex items-center after:absolute after:w-[25px] after:h-[2px] after:left-0 after:top-[50%] after:bg-templatePaleYellow after:translate-x-[-100%]">
+                                            <div className="relative ml-[50px] flex items-center after:absolute after:w-[25px] after:h-[2px] after:left-0 after:top-[50%] after:bg-templatePaleYellow after:translate-x-[-100%]">
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                     {/* Match 5 */}
                                                     <div className="flex justify-center items-center h-[25px] sm:h-[50px]">
@@ -199,7 +199,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="flex gap-6 sm:gap-28 flex-col justify-center">
+                                            <div className="flex gap-28 flex-col justify-center">
                                                 <div className="flex items-start justify-end my-[10px] relative before:absolute before:bg-templatePaleYellow before:right-0 before:top-[50%] before:translate-x-[100%] before:w-[25px] before:h-[2px] after:absolute after:bg-templatePaleYellow after:right-[-25px] after:w-[2px] after:top-[50%] item-child last:after:translate-y-[-100%] only:after:hidden">
                                                     <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 1 */}
@@ -460,7 +460,7 @@ const Bracket: React.FC<BracketProps> = ({ data }) => {
                                                     </div>
                                                 </div>
                                                 </div>
-                                            <div className="flex gap-6 sm:gap-28 flex-col justify-center">
+                                            <div className="flex gap-28 flex-col justify-center">
                                                 <div className="flex items-start justify-end my-[10px] relative before:absolute before:bg-templatePaleYellow before:right-0 before:top-[50%] before:translate-x-[100%] before:w-[25px] before:h-[2px] after:absolute after:bg-templatePaleYellow after:right-[-25px] after:w-[2px] after:top-[50%] item-child last:after:translate-y-[-100%] only:after:hidden">
                                                 <div className=" flex flex-col w-[200px] h-[50px] sm:w-[400px] sm:h-[100px] m-0 bg-templatePaleYellow">
                                                         {/* Match 3 */}
